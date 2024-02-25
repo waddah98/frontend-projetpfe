@@ -1,0 +1,20 @@
+
+.offcanvas-custom {
+    width: 5%;
+    max-width: 100px;
+    background-color:#0464FC; /* Changement de la couleur de fond en bleu */
+}
+
+.nav-link i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Pour afficher les icônes dans des cercles */
+    background-color: #D9D9D9; /* Ajout d'un fond blanc derrière les icônes */
+    padding: 5px; /* Espacement autour des icônes - vous pouvez ajuster cette valeur */
+}
+
+.navbar-brand .bi {
+    margin-right: 7px; /* Vous pouvez ajuster cette valeur selon votre préférence */
+}
+
