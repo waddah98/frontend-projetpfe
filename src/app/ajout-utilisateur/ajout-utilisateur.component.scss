@@ -1,17 +1,31 @@
 body {
     font-family: 'Lato', sans-serif; 
 }
-h2 {
-    font-family: 'Raleway', sans-serif; 
+
+
+.card{
+    border-radius: 20px;
 }
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+}
+
 #colonne1{
-// padding: 20px;
+    padding-left: 20px;
 }
-#colonne2 {
+
+#formvisiteur, #formemploye, #formstagiaire{
     background-color: #4835D4;
-    color: white; /* Text color on the background */
-    // padding: 20px; /* Add some padding for better appearance */
+    color: white;
+    // border-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-left: 20px;
+    padding-top: 100px;
 }
+
 
 #button_Modif {
     background-color: rgb(91, 91, 172);
@@ -33,6 +47,3 @@ h2 {
     border:  rgb(18, 94, 47);
 }
 
-#form1, #form2, h2{
-    padding: 20px;
-}
