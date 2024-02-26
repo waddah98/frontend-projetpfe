@@ -6,21 +6,26 @@
     <title>Your Title</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Lato Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
     <!-- Raleway Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
     
+
+    
 </head>
 <body>
-    <app-headermenu></app-headermenu>
-    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class="card ">            
-            <div class="row" id="rowcard">
-
-                <div class="col-md-6" id="colonne1">
-                    <h3>Ajout d'un utilisateur</h3>
-                    <form id="form1">
+    
+    <div class="container d-flex justify-content-center align-items-center mt-5">
+        <div class="card">
+            
+                    <div class="row" id="rowcard">
+                        <!-- colonne 1 -->
+                        
+                            <div class="col-md-6" id="colonne1">
+                                <h2>Ajout d'un utilisateur</h2>
+                                <form id="form1">
                                     <div class="mb-3">
                                         <label for="exampleInputnom" class="form-label">Nom</label>
                                         <input type="nom" class="form-control" id="exampleInputnom" >
@@ -48,132 +53,86 @@
                                                 <option value="employe">Employé</option>
                                                 <option value="stagiaire">Stagiaire</option>
                                             </select>
+                                            <!-- <div *ngIf="FormGroup.get('type')?.value === 'visiteur'">
+                                                <app-ajout-visiteur></app-ajout-visiteur>
+                                            </div>
+                                            <div *ngIf="FormGroup.get('type')?.value === 'employe'">
+                                                <app-ajout-employe></app-ajout-employe>
+                                            </div>
+                                            <div *ngIf="FormGroup.get('type')?.value === 'stagiaire'">
+                                                <app-ajout-stagiaire></app-ajout-stagiaire>
+                                            </div> -->
                                         </form>
                                     </div>
                                     
-                    </form>    
-                </div>
-                <div class="col-md-6" id="formemploye" *ngIf="FormGroup.get('type')?.value === 'employe'">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="duree" class="form-label">Titre d'emploi</label>
-                                        <input type="prenom" class="form-control" id="duree">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="duree" class="form-label">Date de l'affectation de la carte</label>
-                                        <input type="prenom" class="form-control" id="duree">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <div class="row">
-                                        <label for="horaire" class="form-label">Horaires d'accès</label>
-                                        <div class="col-md-6">
-                                        <label for="appt" class="form-label">De</label>
-                                        <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
-                                        </div>
-                                        <div class="col-md-6">
-                                        <label for="appt" class="form-label">à</label>
-                                        <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
-                                        </div>
-                                        </div>
-                                    </div>
-                    
-                                </form> 
-                </div>
-                <div class="col-md-6" id="formstagiaire" *ngIf="FormGroup.get('type')?.value === 'stagiaire'">    
-                                <form>
-                                    <div class="mb-3">
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Equipe</option>
-                                            <option value="1">Equipe1</option>
-                                            <option value="2">Equipe2</option>
-                                            <option value="3">Equipe3</option>
-                                            <option value="4">Equipe4</option>
-                                        </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="duree" class="form-label">Durée d'accès</label>
-                                            <input type="duree" class="form-control" id="duree">
-                                        </div>
-                                        
-                                        
-                                        <div class="mb-3">
-                                            <div class="row">
-                                            
-                                                <label for="horaire" class="form-label">Horaires d'accès</label>
-                                                <div class="col-md-6">
-                                                <label for="appt" class="form-label">De</label>
-                                                <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
-                                                </div>
-                                                <div class="col-md-6">
-                                                <label for="appt" class="form-label">à</label>
-                                                <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
-                                                </div>
-                                            
-                                            </div>
-                                        </div>
-                                        <div class="row mt-4">
-                                            <div class="row justify-content-end">
-                                                <div class="col-auto">
-                                                    <button class="btn btn-primary" id="button_annuler">Annuler</button>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <button class="btn btn-primary" id="button_ajout">Ajouter</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>    
-                </div>
-                <div class="col-md-6" id="formvisiteur" *ngIf="FormGroup.get('type')?.value === 'visiteur'">
-                                <form>
-                                    <div class="mb-3">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Évènement</option>
-                                        <option value="1">évènement1</option>
-                                        <option value="2">évènement3</option>
-                                        <option value="3">évènement2</option>
-                                        <option value="4">évènement4</option>
-                                    </select>
-                                    </div>
-                                    <div class="mb-3">
-                                    <label for="duree" class="form-label">Durée d'accès</label>
-                                    <input type="prenom" class="form-control" id="duree">
-                                    </div>
-                                    <div class="mb-3">
-                                    <div class="row">
-                                        <label for="horaire" class="form-label">Horaires d'accès</label>
-                                        <div class="col-md-6">
-                                        <label for="appt" class="form-label">De</label>
-                                        <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
-                                        </div>
-                                        <div class="col-md-6">
-                                        <label for="appt" class="form-label">à</label>
-                                        <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
-                                        </div>
-                                        <div class="row mt-4">
-                                            <div class="row justify-content-end">
-                                                
-                                                <div class="col-auto">
-                                                    <button class="btn btn-primary" id="button_annuler">Annuler</button>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <button class="btn btn-primary" id="button_ajout">Ajouter</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div> 
                                 </form>    
-                </div>
-                <div class="col-md-6" *ngIf="FormGroup.get('type')?.value === ''">
-                            <form >
-
-                            </form>
-                </div>
+                            </div>
                         
-            </div>
+                        
+                        
+                            <div class="col-md-6" id="colonne2">
+                            
+                            <!-- <div *ngIf="FormGroup.get('type')?.value === 'visiteur'"> -->
+                                <!-- Visiteur -->
+                                <!-- <app-ajout-visiteur></app-ajout-visiteur>
+                            </div> -->
+
+                            <form id="form2" *ngIf="FormGroup.get('type')?.value === 'visiteur'">
+                                <div class="mb-3">
+                                    <h2>Ajout d'un visiteur</h2>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Évènement</option>
+                                    <option value="1">évènement1</option>
+                                    <option value="2">évènement3</option>
+                                    <option value="3">évènement2</option>
+                                    <option value="4">évènement4</option>
+                                </select>
+                                </div>
+                                <div class="mb-3">
+                                <label for="duree" class="form-label">Durée d'accès</label>
+                                <input type="prenom" class="form-control" id="duree">
+                                </div>
+                                <div class="mb-3">
+                                <div class="row">
+                                    <label for="horaire" class="form-label">Horaires d'accès</label>
+                                    <div class="col-md-6">
+                                    <label for="appt" class="form-label">De</label>
+                                    <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
+                                    </div>
+                                    <div class="col-md-6">
+                                    <label for="appt" class="form-label">à</label>
+                                    <input type="time" class="form-control" id="appt" name="appt" min="07:00" max="18:00" required />
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row justify-content-end">
+                                            
+                                            <div class="col-auto">
+                                                <button class="btn btn-primary" id="button_annuler">Annuler</button>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button class="btn btn-primary" id="button_ajout">Ajouter</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div> 
+                            </form>    
+                            
+                            <div *ngIf="FormGroup.get('type')?.value === 'employe'">
+                                <!-- employe -->
+                                <app-ajout-employe></app-ajout-employe>
+                            </div>
+                            <div *ngIf="FormGroup.get('type')?.value === 'stagiaire'">
+                                <!-- stagiaire -->
+                                <app-ajout-stagiaire></app-ajout-stagiaire>
+                            </div>
+                        </div>    
+                    </div>
+                
+
+            
         </div>
+        
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
